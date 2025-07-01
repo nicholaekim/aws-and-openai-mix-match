@@ -33,3 +33,20 @@ python src/pdf_to_sheet.py
 
 The script will process each PDF found in the bucket and append results to the specified Google Sheet tabs.
 
+
+## Processing a Single Invoice
+
+The `process_invoice.py` script extracts specific fields using Textract queries and appends a summary to the `Form Data` tab. Set the following environment variables in addition to the ones above:
+
+- `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, `AWS_REGION`
+- `S3_BUCKET_NAME` – bucket containing the PDF
+- `OPENAI_API_KEY` – for summarization
+- `GOOGLE_SHEET_ID` – target spreadsheet ID
+- `GOOGLE_CREDENTIALS_FILE` – path to your service account JSON
+
+Run the script with the S3 key of the PDF to process:
+
+```bash
+python src/process_invoice.py path/to/invoice.pdf
+```
+
