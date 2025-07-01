@@ -1,0 +1,6 @@
+boto3
+gspread
+google-auth
+
+openai
+python-dateutil
